@@ -1,0 +1,216 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.dice-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000rpx;
+  width: 100vw;
+}
+
+.dice {
+  width: 300rpx;
+  height: 300rpx;
+  position: relative;
+  margin-bottom: 60rpx;
+  background: white;
+  border-radius: 40rpx;
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dice-image {
+  width: 105%;
+  height: 105%;
+}
+
+.dice-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 4rpx solid #e0e0e0;
+  border-radius: 20rpx;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.dot {
+  width: 30rpx;
+  height: 30rpx;
+  background: #333;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+
+/* 点的位置类 */
+.top { align-self: start; }
+.bottom { align-self: end; }
+.left { justify-self: start; }
+.right { justify-self: end; }
+.center { grid-column: 2; grid-row: 2; }
+
+/* 骰子面的位置 */
+.front  { transform: translateZ(150rpx); }
+.back   { transform: translateZ(-150rpx) rotateY(180deg); }
+.right  { transform: translateX(150rpx) rotateY(90deg); }
+.left   { transform: translateX(-150rpx) rotateY(-90deg); }
+.top    { transform: translateY(-150rpx) rotateX(90deg); }
+.bottom { transform: translateY(150rpx) rotateX(-90deg); }
+
+.dice.rolling {
+  animation: shakeAndScale 0.5s infinite;
+}
+
+@keyframes shakeAndScale {
+  0% { 
+    transform: rotate(0deg) scale(1); 
+  }
+  25% { 
+    transform: rotate(-10deg) scale(0.95); 
+  }
+  50% { 
+    transform: rotate(0deg) scale(1.05); 
+  }
+  75% { 
+    transform: rotate(10deg) scale(0.95); 
+  }
+  100% { 
+    transform: rotate(0deg) scale(1); 
+  }
+}
+
+.button-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.roll-btn, .rules-btn, .home-btn {
+  width: 80%;
+  margin: 10rpx 0;
+}
+
+.roll-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.rules-btn {
+  background-color: #2196F3;
+  color: white;
+}
+
+.home-btn {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+.history-area {
+  margin-top: 40rpx;
+  background: white;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.history-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.history-list {
+  max-height: 300rpx;
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 10rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+/* 修改游戏规则按钮样式和位置 */
+.rules-btn-small {
+  position: fixed;
+  left: 20rpx;
+  bottom: 20rpx;
+  font-size: 24rpx;
+  padding: 10rpx 20rpx;
+  background-color: #f0f0f0;
+  color: #666;
+  min-width: unset;
+  width: auto;
+  margin: 0;
+  z-index: 100;
+}
+
+/* 历史记录按钮 */
+.history-btn {
+  background-color: #4CAF50;
+  color: white;
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+  font-size: 24rpx;
+  padding: 10rpx 20rpx;
+}
+
+/* 历史记录弹窗 */
+.history-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.history-content {
+  width: 80%;
+  max-height: 80vh;
+  background-color: white;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.close-btn {
+  margin-top: 20rpx;
+  background-color: #9E9E9E;
+  color: white;
+} 

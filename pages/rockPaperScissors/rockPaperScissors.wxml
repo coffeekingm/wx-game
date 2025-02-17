@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- 玩家1区域（上方玩家） -->
+  <view class="player-area player1">
+    <view class="player-content">
+      <view class="player-title">玩家1</view>
+      <view class="score">得分：{{player1Score}}</view>
+      <view class="choices">
+        <view class="choice {{player1Choice === 'rock' ? 'selected' : ''}}" bindtap="player1Select" data-choice="rock">
+          <image src="/assets/images/rock.png" mode="aspectFit"></image>
+        </view>
+        <view class="choice {{player1Choice === 'scissors' ? 'selected' : ''}}" bindtap="player1Select" data-choice="scissors">
+          <image src="/assets/images/scissors.png" mode="aspectFit"></image>
+        </view>
+        <view class="choice {{player1Choice === 'paper' ? 'selected' : ''}}" bindtap="player1Select" data-choice="paper">
+          <image src="/assets/images/paper.png" mode="aspectFit"></image>
+        </view>
+      </view>
+      <button class="confirm-btn {{player1Confirmed ? 'modifying' : ''}}" bindtap="player1Confirm" disabled="{{!player1Choice || showResult}}">
+        {{player1Confirmed ? '修改' : '确认'}}
+      </button>
+    </view>
+  </view>
+
+  <!-- 中间结果区域 -->
+  <view class="result-area">
+    <view class="result-text" wx:if="{{showResult}}">{{resultText}}</view>
+    <button class="restart-btn" bindtap="restartGame" wx:if="{{showResult}}">重新开始</button>
+    <button class="rules-btn-small" bindtap="showRules">规则</button>
+  </view>
+
+  <!-- 玩家2区域（下方玩家） -->
+  <view class="player-area player2">
+    <view class="player-content">
+      <view class="player-title">玩家2</view>
+      <view class="score">得分：{{player2Score}}</view>
+      <view class="choices">
+        <view class="choice {{player2Choice === 'rock' ? 'selected' : ''}}" bindtap="player2Select" data-choice="rock">
+          <image src="/assets/images/rock.png" mode="aspectFit"></image>
+        </view>
+        <view class="choice {{player2Choice === 'scissors' ? 'selected' : ''}}" bindtap="player2Select" data-choice="scissors">
+          <image src="/assets/images/scissors.png" mode="aspectFit"></image>
+        </view>
+        <view class="choice {{player2Choice === 'paper' ? 'selected' : ''}}" bindtap="player2Select" data-choice="paper">
+          <image src="/assets/images/paper.png" mode="aspectFit"></image>
+        </view>
+      </view>
+      <button class="confirm-btn {{player2Confirmed ? 'modifying' : ''}}" bindtap="player2Confirm" disabled="{{!player2Choice || showResult}}">
+        {{player2Confirmed ? '修改' : '确认'}}
+      </button>
+    </view>
+  </view>
+</view> 

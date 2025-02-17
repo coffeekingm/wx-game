@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="header">
+    <text class="title">更多游戏即将到来</text>
+  </view>
+
+  <view class="coming-soon">
+    <image class="coming-soon-image" src="/assets/images/coming-soon.png" mode="aspectFit"></image>
+    <text class="coming-soon-text">敬请期待更多有趣的游戏！</text>
+  </view>
+
+  <view class="features">
+    <view class="feature-item">
+      <icon type="info" size="40" color="#2196F3"></icon>
+      <text class="feature-text">更多趣味游戏</text>
+    </view>
+    <view class="feature-item">
+      <icon type="success" size="40" color="#4CAF50"></icon>
+      <text class="feature-text">持续更新中</text>
+    </view>
+    <view class="feature-item">
+      <icon type="warn" size="40" color="#FF9800"></icon>
+      <text class="feature-text">尽情期待</text>
+    </view>
+  </view>
+
+  <button class="home-btn" bindtap="goHome">返回首页</button>
+</view> 

@@ -1,0 +1,141 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.player-area {
+  background: white;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  height: 36vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 玩家1（上方）区域旋转180度 */
+.player1 .player-content {
+  transform: rotate(180deg);
+}
+
+/* .player2 {
+  transform: rotate(180deg);
+}
+
+.player2 .choice image {
+  transform: rotate(180deg);
+}
+
+.player2 .player-title,
+.player2 .score,
+.player2 .confirm-btn {
+  transform: rotate(180deg);
+} */
+
+.player-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.score {
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-around;
+  margin: 20rpx 0;
+}
+
+.choice {
+  width: 160rpx;
+  height: 160rpx;
+  border: 4rpx solid #ddd;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+}
+
+.choice.selected {
+  border-color: #4CAF50;
+  background: #E8F5E9;
+}
+
+.choice image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.confirm-btn {
+  margin-top: 20rpx;
+  background-color: #4CAF50;  /* 默认绿色 */
+  color: white;
+}
+
+/* 添加修改状态的样式 */
+.confirm-btn.modifying {
+  background-color: #FF9800;  /* 橙色 */
+  color: #FFFFFF;  /* 白色文字 */
+}
+
+.result-area {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  text-align: center;
+}
+
+.result-text {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.restart-btn, .rules-btn, .home-btn {
+  margin: 10rpx;
+  font-size: 28rpx;
+}
+
+.rules-btn {
+  background-color: #2196F3;
+  color: white;
+}
+
+.home-btn {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+/* 修改重新开始按钮样式 */
+.restart-btn {
+  background-color: #2196F3;
+  color: white;
+  margin: 10rpx;
+  font-size: 32rpx;
+}
+
+/* 修改游戏规则按钮样式 */
+.rules-btn-small {
+  font-size: 24rpx;
+  padding: 10rpx 20rpx;
+  background-color: #f0f0f0;
+  color: #666;
+  margin: 10rpx;
+}
+
+.player-content {
+  width: 100%;
+} 

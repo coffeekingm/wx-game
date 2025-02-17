@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="dice-area">
+    <!-- 骰子显示区域 -->
+    <view class="dice {{isRolling ? 'rolling' : ''}}" bindtouchstart="startRoll" bindtouchend="endRoll">
+      <image class="dice-image" src="/assets/images/dice/dice-{{currentNumber}}.png" mode="aspectFill"></image>
+    </view>
+    
+    <!-- 操作按钮区域 -->
+    <view class="button-area">
+      <button class="rules-btn-small" bindtap="showRules">规则</button>
+      <button class="history-btn" bindtap="showHistory">历史记录</button>
+    </view>
+  </view>
+
+  <!-- 历史记录弹窗 -->
+  <view class="history-modal" wx:if="{{showHistoryModal}}" bindtap="hideHistory">
+    <view class="history-content" catchtap="stopPropagation">
+      <view class="history-title">历史记录</view>
+      <view class="history-list">
+        <view class="history-item" wx:for="{{history}}" wx:key="index">
+          第{{index + 1}}次：{{item}}点
+        </view>
+      </view>
+      <button class="close-btn" bindtap="hideHistory">关闭</button>
+    </view>
+  </view>
+</view> 

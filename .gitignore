@@ -1,0 +1,22 @@
+# 微信开发者工具生成的文件
+project.config.json
+sitemap.json
+
+# 本地开发产生的文件
+logs/
+temp/
+
+# 依赖文件
+node_modules/
+
+# 打包文件
+dist/
+miniprogram_dist/
+
+# 缓存文件
+*.cache
+*.lock
+
+# 编辑器产生的文件
+.idea/
+.vscode/

@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="header">
+      <image class="logo" src="/assets/images/logo.png" mode="aspectFit"></image>
+      <text class="title">趣味小游戏</text>
+    </view>
+
+    <view class="game-grid">
+      <view class="game-item" bindtap="navigateToGame" data-game="rockPaperScissors">
+        <image src="/assets/images/rps-logo.png" mode="aspectFit"></image>
+        <text>石头剪刀布</text>
+      </view>
+      
+      <view class="game-item" bindtap="navigateToGame" data-game="dice">
+        <image src="/assets/images/dice-logo.png" mode="aspectFit"></image>
+        <text>骰子游戏</text>
+      </view>
+      
+      <view class="game-item coming-soon">
+        <image src="/assets/images/coming-soon.png" mode="aspectFit"></image>
+        <text>敬请期待</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
