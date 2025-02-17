@@ -14,6 +14,9 @@
         <view class="choice {{player1Choice === 'paper' ? 'selected' : ''}}" bindtap="player1Select" data-choice="paper">
           <image src="/assets/images/paper.png" mode="aspectFit"></image>
         </view>
+        <view class="fog" wx:if="{{player1Confirmed && player1Choice &&!showResult &&!player1Modifying}}">
+          <view class="fog-tip">已选择，等待对手选择...</view>
+        </view>
       </view>
       <button class="confirm-btn {{player1Confirmed ? 'modifying' : ''}}" bindtap="player1Confirm" disabled="{{!player1Choice || showResult}}">
         {{player1Confirmed ? '修改' : '确认'}}
@@ -42,6 +45,9 @@
         </view>
         <view class="choice {{player2Choice === 'paper' ? 'selected' : ''}}" bindtap="player2Select" data-choice="paper">
           <image src="/assets/images/paper.png" mode="aspectFit"></image>
+        </view>
+        <view class="fog" wx:if="{{player2Confirmed && player2Choice &&!showResult &&!player2Modifying}}">
+          <view class="fog-tip">已选择，等待对手选择...</view>
         </view>
       </view>
       <button class="confirm-btn {{player2Confirmed ? 'modifying' : ''}}" bindtap="player2Confirm" disabled="{{!player2Choice || showResult}}">
