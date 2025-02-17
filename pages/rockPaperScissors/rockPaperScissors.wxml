@@ -15,7 +15,9 @@
           <image src="/assets/images/paper.png" mode="aspectFit"></image>
         </view>
         <view class="fog" wx:if="{{player1Confirmed && player1Choice &&!showResult &&!player1Modifying}}">
-          <view class="fog-tip">已选择，等待对手选择...</view>
+          <view class="fog-tip">
+            已选择，等待对手选择<view class="dots"></view>
+          </view>
         </view>
       </view>
       <button class="confirm-btn {{player1Confirmed ? 'modifying' : ''}}" bindtap="player1Confirm" disabled="{{!player1Choice || showResult}}">
@@ -47,7 +49,9 @@
           <image src="/assets/images/paper.png" mode="aspectFit"></image>
         </view>
         <view class="fog" wx:if="{{player2Confirmed && player2Choice &&!showResult &&!player2Modifying}}">
-          <view class="fog-tip">已选择，等待对手选择...</view>
+          <view class="fog-tip">
+            已选择，等待对手选择<view class="dots"></view>
+          </view>
         </view>
       </view>
       <button class="confirm-btn {{player2Confirmed ? 'modifying' : ''}}" bindtap="player2Confirm" disabled="{{!player2Choice || showResult}}">
